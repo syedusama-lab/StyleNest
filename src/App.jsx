@@ -8,7 +8,6 @@ import Cart from "./components/Cart";
 import CheckOut from "./components/CheckOut";
 import OrderConfirmation from "./components/OrderConfirmation";
 import FilterData from "./components/FilterData";
-import ProductDetails from "./components/ProductDetails";
 
 function App() {
   const [order,setOrder] = useState(null)
