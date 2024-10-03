@@ -16,7 +16,7 @@ const FilterData = () => {
         </div>
       ) : (
         <div className="w-full flex items-center justify-center">
-            <img src="src/assets/images/nodata.jpg" alt="" className="w-[500px]" />
+            <img src="/assets/images/nodata.jpg" alt="" className="w-[500px]" />
         </div>
       )}
     </div>

@@ -100,7 +100,7 @@ const Cart = () => {
       ) : (
         <div className="flex justify-center">
           <img
-            src="src/assets/images/cart.jpg"
+            src="/assets/images/cart.jpg"
             className="m-5 rounded-lg h-96 w-[50vw]"
             alt=""
           />
