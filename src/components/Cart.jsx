@@ -3,12 +3,13 @@ import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
 import Address from "./Address";
-import {
-  decreaseQuantity,
-  increaseQuantity,
-  removeFromCart,
-} from "../store/cartSlice";
+// import {
+//   decreaseQuantity,
+//   increaseQuantity,
+//   removeFromCart,
+// } from "../store/cartSlice";
 import { useNavigate } from "react-router-dom";
+import { decreaseQuantity, increaseQuantity, removeFromCart } from "../../public/store/CartSlice";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);

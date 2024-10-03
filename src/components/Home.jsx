@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import category, { mockData } from "../Data/MockData";
-import shop from "../assets/images/home_shop.jpg";
 import InfoSec from "./InfoSec";
 import CategoriesSec from "./CategoriesSec";
-import { setProducts } from "../store/productSlice";
+// import { setProducts } from "../store/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCart from "./ProductCart";
 import Shop from "./Shop";
+import { setProducts } from "../../public/store/ProductSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ const Home = () => {
             </ul>
           </div>
           <div className="relative w-full md:w-9/12 mt-8 md:mt-0 h-96">
-            <img className="h-full w-full" src={shop} alt="" />
+            <img className="h-full w-full" src="/assets/images/home_shop.jpg" alt="" />
             <div className="absolute top-[55%] left-10 md:top-[60%] md:left-[55%] md:-translate-x-[50%] md:-translate-y-[50%] text-white">
               <p className="text-white-600 font-semibold mb-4">
                 Syed E-Commerce

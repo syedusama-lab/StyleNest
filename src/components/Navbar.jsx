@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import Login from "./Login";
 import Register from "./Register";
-import { setSearhTerm } from "../store/productSlice";
+import { setSearhTerm } from "../../public/store/ProductSlice";
+// import { setSearhTerm } from "../store/productSlice";
 
 const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
