@@ -3,7 +3,7 @@ import category, { mockData } from "../Data/MockData";
 import shop from "../assets/images/home_shop.jpg";
 import InfoSec from "./InfoSec";
 import CategoriesSec from "./CategoriesSec";
-import { setProducts } from "../redux/productSlice";
+import { setProducts } from "../store/productSlice";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCart from "./ProductCart";
 import Shop from "./Shop";

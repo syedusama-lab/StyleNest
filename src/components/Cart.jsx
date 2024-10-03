@@ -3,15 +3,19 @@ import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
 import Address from "./Address";
-import { decreaseQuantity, increaseQuantity, removeFromCart } from "../redux/cartSlice";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../store/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [address, setAddress] = useState("Main Store of E-Shop");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   console.log(cart);
   return (
     <div className="mt-[110px] container mx-auto py-8 min-h-96 pl-1 pr-2 md:px-16 lg:px-24">
@@ -42,20 +46,33 @@ const Cart = () => {
                         className="md:w-16 md:h-16 mb-1 md:mb-0 w-10 h-10 object-contain rounded"
                       />
                       <div className="flex-1 md:ml-4">
-                        <h3 className="text-[12px] md:text-lg font-semibold">{prod.name}</h3>
+                        <h3 className="text-[12px] md:text-lg font-semibold">
+                          {prod.name}
+                        </h3>
                       </div>
                     </div>
                     <div className="flex space-x-7 md:space-x-12 items-center">
                       <p>${prod.price.toFixed(0)}</p>
                       <div className="flex items-center justify-center border">
-                        <button className="text-xl font-bold px-1.5 border-r" onClick={()=> dispatch(decreaseQuantity(prod.id))}>
+                        <button
+                          className="text-xl font-bold px-1.5 border-r"
+                          onClick={() => dispatch(decreaseQuantity(prod.id))}
+                        >
                           -
                         </button>
                         <p className="text-xl px-1 border-l">{prod.quantity}</p>
-                        <button className="text-xl px-1 border-l" onClick={()=> dispatch(increaseQuantity(prod.id))}>+</button>
+                        <button
+                          className="text-xl px-1 border-l"
+                          onClick={() => dispatch(increaseQuantity(prod.id))}
+                        >
+                          +
+                        </button>
                       </div>
                       <p>${(prod.price * prod.quantity).toFixed(0)}</p>
-                      <button className="text-red-500 hover:text-red-700" onClick={()=>dispatch(removeFromCart(prod.id))}>
+                      <button
+                        className="text-red-500 hover:text-red-700"
+                        onClick={() => dispatch(removeFromCart(prod.id))}
+                      >
                         <FaTrash />
                       </button>
                     </div>
@@ -88,14 +105,17 @@ const Cart = () => {
                 <span>Total Price</span>
                 <span>${cart.totalPrice.toFixed(2)}</span>
               </div>
-              <button className="w-full bg-red-600 text-white py-2 hover:bg-red-800 rounded-lg" onClick={()=> navigate("/checkout")}>
+              <button
+                className="w-full bg-red-600 text-white py-2 hover:bg-red-800 rounded-lg"
+                onClick={() => navigate("/checkout")}
+              >
                 Proceed to Checkout
               </button>
             </div>
           </div>
           <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-                <Address setAddress={setAddress} setIsModalOpen={setIsModalOpen}/>
-            </Modal> 
+            <Address setAddress={setAddress} setIsModalOpen={setIsModalOpen} />
+          </Modal>
         </div>
       ) : (
         <div className="flex justify-center">

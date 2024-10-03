@@ -5,29 +5,29 @@ import { Link, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 import Login from "./Login";
 import Register from "./Register";
-import { setSearhTerm } from "../redux/productSlice";
+import { setSearhTerm } from "../store/productSlice";
 
 const Navbar = () => {
   const products = useSelector((state) => state.cart.products);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
-  const [search, setSearch] = useState()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const [search, setSearch] = useState();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const openSignUp = () =>{
-    setIsLogin(false)
-    setIsModalOpen(true)
-  }
-  const openLogin = () =>{
-    setIsLogin(true)
-    setIsModalOpen(true)
-  }
-  const handleSearch = (e) =>{
-    e.preventDefault()
-    dispatch(setSearhTerm(search))
-    navigate('/filter-data')
-  }
+  const openSignUp = () => {
+    setIsLogin(false);
+    setIsModalOpen(true);
+  };
+  const openLogin = () => {
+    setIsLogin(true);
+    setIsModalOpen(true);
+  };
+  const handleSearch = (e) => {
+    e.preventDefault();
+    dispatch(setSearhTerm(search));
+    navigate("/filter-data");
+  };
 
   return (
     <nav className="bg-white w-full shadow-md fixed z-[98] top-0">
@@ -41,9 +41,12 @@ const Navbar = () => {
               type="text"
               placeholder="Search Product"
               className="w-full border py-2 px-4"
-              onChange={(e)=>setSearch(e.target.value)}
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <FaSearch onClick={handleSearch} className="hover:cursor-pointer absolute top-3 right-3 text-red-500" />
+            <FaSearch
+              onClick={handleSearch}
+              className="hover:cursor-pointer absolute top-3 right-3 text-red-500"
+            />
           </form>
         </div>
         <div className="flex items-center space-x-4">
@@ -84,7 +87,11 @@ const Navbar = () => {
         </Link>
       </div>
       <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}>
-        {isLogin ? <Login openSignUp={openSignUp}/> : <Register openLogin={openLogin}/>}
+        {isLogin ? (
+          <Login openSignUp={openSignUp} />
+        ) : (
+          <Register openLogin={openLogin} />
+        )}
       </Modal>
     </nav>
   );
