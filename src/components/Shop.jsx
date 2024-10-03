@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { FixedSizeList as List } from "react-window";
 import ProductCart from "./ProductCart";
 
 const Shop = () => {

@@ -80,7 +80,7 @@ const Navbar = () => {
         <Link to={"/shop"} className="hover:underline">
           Shop
         </Link>
-        <Link to={"/"} className="hover:underline">
+        <Link to={"/contact"} className="hover:underline">
           Contact
         </Link>
         <Link to={"/"} className="hover:underline">

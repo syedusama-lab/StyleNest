@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import CheckOut from "./components/CheckOut";
 import OrderConfirmation from "./components/OrderConfirmation";
 import FilterData from "./components/FilterData";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   const [order,setOrder] = useState(null)
@@ -21,6 +22,7 @@ function App() {
         <Route path="/checkout" element={<CheckOut setOrder={setOrder} />}></Route>
         <Route path="/oder-confirmation" element={<OrderConfirmation order={order}/>}></Route>
         <Route path="/filter-data" element={<FilterData />}></Route>
+        <Route path="/contact" element={<ContactUs />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
