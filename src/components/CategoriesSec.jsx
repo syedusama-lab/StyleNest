@@ -4,15 +4,15 @@ const CategoriesSec = () => {
   const cetegory = [
     {
       title:"mens",
-      url:"src/assets/images/mens.jpg"
+      url:"/assets/images/mens.jpg"
     },
     {
       title:"women",
-      url:"src/assets/images/women.jpg"
+      url:"/assets/images/women.jpg"
     },
     {
       title:"Kids",
-      url:"src/assets/images/kids.jpg"
+      url:"/assets/images/kids.jpg"
     },
   ]
   return (
