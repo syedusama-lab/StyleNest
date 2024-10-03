@@ -2,13 +2,10 @@ import React from "react";
 import ReactStars from "react-stars";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../public/store/CartSlice";
-// import { addToCart } from "../store/cartSlice";
 
 const ProductCart = ({ product }) => {
   const dispatch = useDispatch();
   const handleAddToCart = (event, product) => {
-    // event.stopPropogation()
-    // event.preventDefault()
     dispatch(addToCart(product));
     alert("added succesfuly");
   };
